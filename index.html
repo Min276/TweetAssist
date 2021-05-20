@@ -7,14 +7,14 @@
 <meta name="viewport" content="width= device-width , initial-scale = 1">
 <meta name="description" content="This is just a clone twitter website which is developed just to practise some javascript learnt from Udemy.">
     <meta name="author" content="Min Khant Kyaw">
-    <meta name="image" content="https://min276.github.io/TwitterClone/img/twitterimg.png">
+    <meta name="image" content="https://min276.github.io/TwitterClone/img/twittermicon.png">
     
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="Twitter Clone" /> 
 	<meta property="og:site" content="https://min276.github.io/csai.edu.mm/" />
 	<meta property="og:title" content="Twitter Clone"/> 
 	<meta property="og:description" content="This is just a clone twitter website which is developed just to practise some javascript learnt from Udemy." /> 
-	<meta property="og:image" content="https://min276.github.io/TwitterClone/img/twitterimg.png" /> 
+	<meta property="og:image" content="https://min276.github.io/TwitterClone/img/twittermicon.png" /> 
 	<meta property="og:url" content="https://min276.github.io/TwitterClone/" /> 
 	<meta property="og:type" content="Twitter Clone" />
 <script src="https://kit.fontawesome.com/bbdccb4e58.js" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
 <body id="backg">
 <h3 id="welcome">Hello, <span id="username"></span> ! Cordially welcome to <span id="twit">Twitter Clone
 </span> !</h3>
-<form action="https://twitter.com/intent/tweet" id="goTweet" method="GET">
+<form action="https://twitter.com/intent/tweet" id="goTweet" method="POST">
 <textarea name="text" rows="7" cols="30" id="textmessage" placeholder="What is happening?"  required></textarea>
 </form>
 <p id="count"><span id="statusCount"></span><span id="remainCount"></span></p>
@@ -46,16 +46,5 @@
 </body>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="js/backend.app.js" type="text/javascript"></script>
-<script>
-	function doClear(){
-    document.getElementById("textmessage").value = "";
-	document.getElementsByClassName("highlighter").display = "none";
-    textCount.innerHTML = tweetCount + " characters entered | ";
-textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
-textReCount.style.color = "#2196f3";
-document.getElementById("short").style.display = "none";
-
-}
-</script>
 
 </html>

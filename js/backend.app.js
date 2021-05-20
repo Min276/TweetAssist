@@ -1,9 +1,4 @@
-
-      $(document).ready(function() {
-        $("textarea").hashtags();
-      });
-
-    var userName;
+  var userName;
     var input = document.getElementById('username');
 
     function store() {
@@ -70,6 +65,7 @@ var textCount = document.getElementById("statusCount");
 var textReCount = document.getElementById("remainCount");
 textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
+$('.highlighter').show();
  if (tweetCount >= 280) {
     textReCount.style.color = "red";
     document.getElementById("short").style.display = "unset";
@@ -88,7 +84,7 @@ textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
 // }
 }
 
-// 
+ 
 // tweet = tweetCount.slice(0,280);
 //     function doCheck(){
 //     	// var tweet = prompt("What's news, " + userName + "?" + " Share your thoughts here!");
@@ -120,7 +116,15 @@ function doCopy(){
   document.execCommand("copy");
 }
 
+function doClear(){
+    document.getElementById("textmessage").value = "";
+    $('.highlighter').hide();
+  textCount.innerHTML = tweetCount + " characters entered | ";
+textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
+textReCount.style.color = "#2196f3";
+document.getElementById("short").style.display = "none";
 
+}
 
 function changeNight(){
 
@@ -186,7 +190,9 @@ function changeNight(){
 
 }
 
-  
+$(document).ready(function() {
+    $("textarea").hashtags();        
+});
 
   document.addEventListener('DOMContentLoaded', () => {
   document.getElementById("short").style.display = "none";
