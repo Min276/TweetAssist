@@ -1,0 +1,37 @@
+<html>
+  <head>
+<title>Twitter Clone</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width= device-width , initial-scale = 1">
+<script src="https://kit.fontawesome.com/bbdccb4e58.js" crossorigin="anonymous"></script>
+<!-- Jquery Plugin --> 
+<link href="css/jquery.hashtags.css" media="all" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/autosize.min.js" type="text/javascript"></script>
+<script src="js/jquery.hashtags.js" type="text/javascript"></script>
+<!--End-->
+</head>
+<body id="backg">
+<h3 id="welcome">Hello, <span id="username"></span> ! Cordially welcome to <span id="twit">Twitter Clone
+</span> !</h3>
+<form action="https://twitter.com/intent/tweet" id="goTweet" method="GET">
+<textarea name="text" rows="7" cols="30" id="textmessage" placeholder="What is happening?"  required></textarea>
+</form>
+<p id="count"><span id="statusCount"></span><span id="remainCount"></span></p>
+<br>
+
+<button type="submit" form="goTweet"><i class="fab fa-twitter"></i> Tweet</button>
+<button id="short" onclick="doCut();">Shorten</button>
+<button id="copy" onclick="doCopy()"><i class="fas fa-copy"></i></button>
+<button id="delete" onclick="doClear()"><i class="fa fa-trash"></i></button>
+
+<button id="showDate"></button>
+
+<button id="nightmode" onclick="changeNight()"><i class="fa fa-fw fa-moon-o" style="font-size:17px;color:white"></i></button>
+
+</body>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script src="js/backend.app.js" type="text/javascript"></script>
+
+</html>
