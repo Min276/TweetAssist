@@ -5,17 +5,16 @@
         localStorage.setItem('storedUserName', userName);
      
     }
-   function get(){
-    const storedValue  = localStorage.getItem('storedUserName');
-    document.getElementById('username').innerHTML = storedValue;
-   }
+   // function get(){
+   //  var storedValue  = localStorage.getItem('storedUserName');
+   // }
 
     document.getElementById('username').innerHTML = "Unknown User";
 
     input.addEventListener('click', function(){
-	userName = prompt("What's your first name?");
+	  userName = prompt("What's your first name?");
      
-	if (userName != null && userName.length != 0) {
+	  if (userName != null && userName.length != 0) {
      var firstOne = userName.slice(0,1);
      firstOne = firstOne.toUpperCase();
      var lastOne = userName.slice(1,userName.length);
@@ -23,13 +22,16 @@
      var result = firstOne + lastOne;
      userName = result;
      store();
-     console.log("Username: " + userName);
+     // console.log("Username: " + userName);
+     // document.getElementById('username').innerHTML = userName;
+     var storedValue  = localStorage.getItem('storedUserName');
+     userName = storedValue;
      document.getElementById('username').innerHTML = userName;
-     get();
-     }
+  }
 	else {
-		document.getElementById('username').innerHTML = "Unknown User";
-		// userName = "Unknown User";
+		// document.getElementById('username').innerHTML = "Unknown User";
+		userName = "Unknown User";
+    document.getElementById('username').innerHTML = userName;
 	}
 
 });
@@ -189,6 +191,18 @@ function changeNight(){
 
 
 }
+
+//change twitter url based on screen size
+  const screen = window.matchMedia( "(max-width: 767px)");
+
+    if(screen.matches) {
+    document.getElementById("goTweet").action = "https://twitter.com/home";
+    document.getElementById("textmessage").name = "status" ;
+    } else {
+    document.getElementById("goTweet").action = "https://twitter.com/intent/tweet";
+    document.getElementById("textmessage").name = "text" ;
+    }
+
 
 $(document).ready(function() {
     $("textarea").hashtags();        
