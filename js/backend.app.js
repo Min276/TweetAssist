@@ -125,7 +125,7 @@ function doClear(){
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
 textReCount.style.color = "#2196f3";
 document.getElementById("short").style.display = "none";
-
+location.reload(true);
 }
 
 function changeNight(){
