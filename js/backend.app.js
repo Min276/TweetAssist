@@ -59,7 +59,7 @@ var textReCount = document.getElementById("remainCount");
 textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
 
-document.getElementById("textmessage").onkeyup = () => {
+document.getElementById("textmessage").oninput = () => {
 var tweet = document.getElementById("textmessage").value;
 
 var tweetCount = tweet.length;
@@ -143,9 +143,13 @@ function changeNight(){
    userBox.style.color = "black";
    userBox.style.background = "#e8ff08";
 
-   var button = document.querySelector('button');
+   var speaker = document.getElementById('change');
+   speaker.style.background = "black";
+
+   var button = document.getElementById('submit');
    button.style.borderColor = '#ffeb3b';
    button.style.background = "black";
+
    var copy = document.getElementById('copy');
    copy.style.borderColor = '#ffeb3b';
    copy.style.background = "black";
@@ -170,12 +174,17 @@ function changeNight(){
    userBox.style.color = "white";
    userBox.style.background = "#607d8b";
 
-   var button = document.querySelector('button');
+   var speaker = document.getElementById('change');
+   speaker.style.background = "#03a9f4";
+ 
+   var button = document.getElementById('submit');
    button.style.borderColor = ' #673ab7';
    button.style.background = "#03a9f4";
+
    var copy = document.getElementById('copy');
    copy.style.borderColor = ' #673ab7';
    copy.style.background = "#03a9f4";
+
    var del = document.getElementById('delete');
    del.style.borderColor = ' #673ab7';
    del.style.background = "#03a9f4";

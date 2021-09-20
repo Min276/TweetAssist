@@ -9,7 +9,7 @@ border-radius: 10px;
 }
 #welcome{
 margin-top: 17px;
-padding: 10px;
+padding: 5px;
 color: #2196f3;
 /* border: dotted #ff0057; */
 text-align: center;
@@ -93,6 +93,7 @@ border: 2px solid #f44336;
 /*border-color: #e8ff00!important;*/
 border-color: #ffc107!important;
 }
+
 #short, #copy, #delete{
     padding-right: 12px;
 padding-left: 12px;
