@@ -1,22 +1,22 @@
 <html>
   <head>
-<title>Twitter Clone</title>
+<title>Tweet Assist</title>
 <!-- Favicon  -->
-<link rel="icon" href="img/twittericon.png">
+<link rel="icon" href="img/twittericon.png" sizes="16x16">
 <meta charset="utf-8">
 <meta name="viewport" content="width= device-width , initial-scale = 1">
-<meta name="description" content="This is just a clone twitter website which is developed just to practise some javascript learnt from Udemy.">
+<meta name="description" content="This is just a tweet assistance developed just to practise some basic javascript.">
     <meta name="author" content="Min Khant Kyaw">
     <meta name="image" content="https://min276.github.io/TwitterClone/img/twittermicon.png">
     
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="Twitter Clone" /> 
+	<meta property="og:site_name" content="Tweet Assist" /> 
 	<meta property="og:site" content="https://min276.github.io/csai.edu.mm/" />
-	<meta property="og:title" content="Twitter Clone"/> 
-	<meta property="og:description" content="This is just a clone twitter website which is developed just to practise some javascript learnt from Udemy." /> 
+	<meta property="og:title" content="Tweet Assist"/> 
+	<meta property="og:description" content="This is just a tweet assistance developed just to practise some basic javascript." /> 
 	<meta property="og:image" content="https://min276.github.io/TwitterClone/img/twittermicon.png" /> 
 	<meta property="og:url" content="https://min276.github.io/TwitterClone/" /> 
-	<meta property="og:type" content="Twitter Clone" />
+	<meta property="og:type" content="Tweet Assist" />
 <script src="https://kit.fontawesome.com/bbdccb4e58.js" crossorigin="anonymous"></script>
 <!-- Jquery Plugin --> 
 <link href="css/jquery.hashtags.css" media="all" rel="stylesheet" type="text/css" />
@@ -55,7 +55,7 @@ border-color: #ffc107!important;
 <body id="backg">
 <h3 id="welcome">Hello, <span id="username"></span> ! Warmly welcome to <span id="twit">Tweet Assist
 </span> ! <button id="change" onclick="doStart();"><i class="fas fa-microphone-slash"></i></button></h3>
-<form action="https://twitter.com/home" id="goTweet" method="GET">
+<form action="https://twitter.com/home" id="goTweet" method="POST">
 <textarea name="status" rows="7" cols="30" id="textmessage" placeholder="What is happening?"  required></textarea>
 </form>
 <p id="count"><span id="statusCount"></span><span id="remainCount"></span></p>
