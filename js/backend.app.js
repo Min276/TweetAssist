@@ -244,9 +244,10 @@ d = new Date();
 x = d.getMonth();
 
 
-document.getElementById('showDate').innerHTML = '<i class="fa fa-calendar"></i> '  + output;
-
 var popup = document.getElementById("showDate");
+
+  popup.innerHTML = '<i class="fa fa-calendar"></i> '  + output;
+
   popup.addEventListener('click', function(){
 
     if (popup.value != months) {
