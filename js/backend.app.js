@@ -1,15 +1,21 @@
   var userName;
     var input = document.getElementById('username');
-
+    var storedUserName;
+     var storedValue;
+   
     function store() {
         localStorage.setItem('storedUserName', userName);
-     
-    }
-   // function get(){
-   //  var storedValue  = localStorage.getItem('storedUserName');
-   // }
+   }
+   function get(){
+    storedValue  = localStorage.getItem('storedUserName');
+   }
+     storedValue  = localStorage.getItem('storedUserName');
 
-    document.getElementById('username').innerHTML = "Unknown User";
+    if(storedValue){
+    document.getElementById('username').innerHTML = storedValue;
+  }else{
+     document.getElementById('username').innerHTML = "Unknown User"
+  }
 
     input.addEventListener('click', function(){
 	  userName = prompt("What's your first name?");
@@ -22,9 +28,8 @@
      var result = firstOne + lastOne;
      userName = result;
      store();
-     // console.log("Username: " + userName);
-     // document.getElementById('username').innerHTML = userName;
-     var storedValue  = localStorage.getItem('storedUserName');
+     get();
+     // var storedValue  = localStorage.getItem('storedUserName');
      userName = storedValue;
      document.getElementById('username').innerHTML = userName;
   }
@@ -36,23 +41,15 @@
 
 });
 
-
-	// if (userName == null || userName.length == 0) {
-	// 	document.getElementById('username').innerHTML = "Unknown User";
-	// 	userName = "Unknown User";
-	// }else
-	//     document.getElementById('username').innerHTML = userName;
-// 	function popUpBox(){
-// var tweet = prompt("What's news, " + userName + "?" + " Share your thoughts here!");
-// var tweetCount = tweet.length;
-// if (tweetCount > 180) {
-//   	 alert("You have entered " + tweetCount +" characters. You have written (" + (180 - tweetCount) + ") characters.");
-//   	 alert("So, the phrase we allow you is: " + tweet.slice(0,180))
-
-//   }else{
-// alert("You have entered " + tweetCount +" characters. You have " + (180 - tweetCount) + " characters remaining.");}
 var tweet = document.getElementById("textmessage").value;
+var storedMessage;
+storedMessage = localStorage.getItem('storedText');
 
+  if(storedMessage){
+    document.getElementById('textmessage').innerHTML = storedMessage;
+  }else{
+     tweet = "";
+  }
 var tweetCount = tweet.length;
 var textCount = document.getElementById("statusCount");
 var textReCount = document.getElementById("remainCount");
@@ -62,23 +59,30 @@ textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
 document.getElementById("textmessage").oninput = () => {
 var tweet = document.getElementById("textmessage").value;
 
+localStorage.setItem('storedText', tweet);
+storedMessage = localStorage.getItem('storedText');
+
+
+  
+
 var tweetCount = tweet.length;
 var textCount = document.getElementById("statusCount");
 var textReCount = document.getElementById("remainCount");
 textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
+
 $('.highlighter').show();
  if (tweetCount >= 280) {
     textReCount.style.color = "red";
-    document.getElementById("short").style.display = "unset";
+    // document.getElementById("short").style.display = "unset";
 
  }else if (tweetCount >= 260) {
     textReCount.style.color = "orange";
-    document.getElementById("short").style.display = "none";
+    // document.getElementById("short").style.display = "none";
 
  }else{
     textReCount.style.color = "#2196f3";
-    document.getElementById("short").style.display = "none";
+    // document.getElementById("short").style.display = "none";
 
  }
 
@@ -86,32 +90,6 @@ $('.highlighter').show();
 // }
 }
 
- 
-// tweet = tweetCount.slice(0,280);
-//     function doCheck(){
-//     	// var tweet = prompt("What's news, " + userName + "?" + " Share your thoughts here!");
-//     	var tweet = document.getElementById("textmessage").value;
-// var tweetCount = tweet.length;
-// textCount.innerHTML = tweetCount + " characters entered | ";
-// textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
-// tweetCount.slice(0,280);
-// if (tweetCount > 280) {
-//   	 alert("You have entered " + tweetCount +" characters. You have written (" + (280 - tweetCount) + ") characters.");
-//   	 alert("So, the phrase we allow you is: " + tweet.slice(0,280))
-
-//   }else{
-// alert("You have entered " + tweetCount +" characters. You have " + (280 - tweetCount) + " characters remaining.");}
-//     }
-
-
-function doCut(){
-  	var tweet = document.getElementById("textmessage").value;
-    var tweetCount = tweet.length;
-    if (tweetCount >= 280) {
-    	alert("280 Characters Tweet: " + tweet.slice(0,280));
-        // tweet = tweet.slice(0,280);
-    }
-}
 
 function doCopy(){
   document.getElementById("textmessage").select();
@@ -120,6 +98,8 @@ function doCopy(){
 
 function doClear(){
     document.getElementById("textmessage").value = "";
+    // localStorage.clear();
+    localStorage.removeItem('storedText');
     $('.highlighter').hide();
   textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
@@ -135,6 +115,8 @@ function changeNight(){
    if (back.style.backgroundColor != "black") {
 
    back.style.background = "black";
+   back.style.transition = "all 1s ease 0s" ;
+
    var textbox = document.getElementById("textmessage");
    textbox.style.background = "black";
    textbox.style.color = "white";
@@ -165,7 +147,10 @@ function changeNight(){
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-sun" style="font-size:17px;color:white"></i>';
    }else{
+    
    back.style.backgroundColor = "white";
+   back.style.transition = "all 1s ease 0s" ;
+
    var textbox = document.getElementById("textmessage");
    textbox.style.background = "white";
    textbox.style.color = "black";
@@ -202,16 +187,6 @@ function changeNight(){
 
 }
 
-//change twitter url based on screen size
-  const screen = window.matchMedia( "(max-width: 767px)");
-
-    if(screen.matches) {
-    document.getElementById("goTweet").action = "https://twitter.com/home";
-    document.getElementById("textmessage").name = "status" ;
-    } else {
-    document.getElementById("goTweet").action = "https://twitter.com/intent/tweet";
-    document.getElementById("textmessage").name = "text" ;
-    }
 
 
 $(document).ready(function() {
@@ -219,7 +194,7 @@ $(document).ready(function() {
 });
 
   document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById("short").style.display = "none";
+  // document.getElementById("short").style.display = "none";
 var d = new Date();
 
 var day = d.getDate();

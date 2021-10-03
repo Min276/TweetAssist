@@ -56,13 +56,13 @@ border-color: #ffc107!important;
 <h3 id="welcome">Hello, <span id="username"></span> ! Warmly welcome to <span id="twit">Tweet Assist
 </span> ! <button id="change" onclick="doStart();"><i class="fas fa-microphone-slash"></i></button></h3>
 <form action="https://twitter.com/home" id="goTweet" method="GET">
-<textarea name="status" rows="7" cols="30" id="textmessage" placeholder="What is happening?"  required></textarea>
+<textarea name="status" rows="7" cols="30" id="textmessage" placeholder="What is happening?" spellcheck="true" required></textarea>
 </form>
 <p id="count"><span id="statusCount"></span><span id="remainCount"></span></p>
 <br>
 
 <button type="submit" id="submit" form="goTweet"><i class="fab fa-twitter"></i> Tweet</button>
-<button id="short" onclick="doCut();">Shorten</button>
+<!-- <button id="short" onclick="doCut();">Shorten</button> -->
 <button id="copy" onclick="doCopy()"><i class="fas fa-copy"></i></button>
 <button id="delete" onclick="doClear()"><i class="fa fa-trash"></i></button>
 
@@ -73,5 +73,5 @@ border-color: #ffc107!important;
 </body>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="js/backend.app.js" type="text/javascript"></script>
-
+<script src="js/autochange.js"></script>
 </html>
