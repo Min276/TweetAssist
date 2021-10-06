@@ -49,8 +49,8 @@ const hours = new Date().getHours();
    mode.innerHTML = '<i class="fa fa-fw fa-sun" style="font-size:17px;color:white"></i>';
    console.log("🌜 It's Night Time !");
  }else {
-   
-   back.style.backgroundColor = "white";
+  var back = document.getElementById("backg");
+   back.style.background = "white";
    back.style.transition = "all 1s ease 0s" ;
    
    var textbox = document.getElementById("textmessage");

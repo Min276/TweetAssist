@@ -104,7 +104,7 @@ function doClear(){
   textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
 textReCount.style.color = "#2196f3";
-document.getElementById("short").style.display = "none";
+// document.getElementById("short").style.display = "none";
 window.location.reload(true);
 //  location.href = "./index.html"
 }
