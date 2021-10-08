@@ -1,6 +1,11 @@
-if ("webkitSpeechRecognition" in window) {
+// if ("webkitSpeechRecognition" in window) {
+  if ("webkitSpeechRecognition" || "SpeechRecognition" in window) {
+ console.log("Speech Recognition Available");
+ 
+ window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition ;
  // console.log("SR Available");
- let speechRecognition = new webkitSpeechRecognition();
+
+ let speechRecognition = new SpeechRecognition();
 
  //continuous listening
  speechRecognition.continuous = true;
@@ -43,11 +48,13 @@ speechRecognition.onresult = (event) => {
  // Set the onClick property of the start button
   function doStart() {
     // Start the Speech Recognition
+
      var change = document.querySelector("#change");
      change.innerHTML = '<i class="fas fa-microphone"></i>';
     speechRecognition.start();
     change.style.background = "black";
     change.style.borderColor = "#89ff00";
+    
     setTimeout(function(){
       change.innerHTML = '<i class="fas fa-microphone-slash"></i>';
       speechRecognition.stop();
