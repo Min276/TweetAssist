@@ -203,17 +203,14 @@ function changeNight(){
     back.style.background = localStorage.getItem("mode");
    }
   
-
-
 }
-
 
 
 $(document).ready(function() {
     $("textarea").hashtags();        
 });
 
-  document.addEventListener('DOMContentLoaded', () => {
+  // document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem("mode") == "black") {
        var back = document.getElementById("backg");
        back.style.background = "black";
@@ -246,7 +243,7 @@ $(document).ready(function() {
    var date = document.getElementById("showDate");
    date.style.background = "black";
    date.style.color = "white";
-    }else {
+    }else if(localStorage.getItem("mode") == "white") {
        var back = document.getElementById("backg");
        back.style.background = "white";
        back.style.transition = "all 1s ease 0s" ;
@@ -316,8 +313,6 @@ var popup = document.getElementById("showDate");
     }else{
     popup.innerHTML = '<i class="fa fa-calendar"></i> '  + output;
     }
-
-  });
 
 
   });

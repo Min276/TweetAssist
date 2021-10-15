@@ -16,6 +16,7 @@ const hours = new Date().getHours();
 // const isDayTime = hours > 6 && hours < 20;
 
  if(hours >= 18 || hours <= 6) {  
+   localStorage.removeItem("mode");
    var back = document.getElementById("backg");
    back.style.background = "black";
    back.style.transition = "all 1s ease 0s" ;
@@ -102,12 +103,12 @@ if (hours > 12) {
 if(hours == 18) { 
       setInterval(function() {
                   window.location.reload();
-                  console.log("Good Evening !! Night Mode Change !");
+                  console.log("Good Evening !!");
       }, 1000); 
 }else if(hours == 6){
        setInterval(function() {
                   window.location.reload();
-                  console.log("Good Morning !! Light Mode Change !");
+                  console.log("Good Morning !!");
       }, 1000); 
 }else {
     console.log("Have A Good Day !!");
@@ -125,5 +126,7 @@ if (hours >= 1 && hours <=5){
   time.innerHTML = " Good Evening 🌤️ from ";
 }else if (hours >= 19 && hours <= 24){
   time.innerHTML = " Good Night 🌜 from ";
+} else {
+  time.innerHTML = " Warmly welcome to ";
 }
 });
