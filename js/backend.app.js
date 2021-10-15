@@ -55,6 +55,7 @@ var textCount = document.getElementById("statusCount");
 var textReCount = document.getElementById("remainCount");
 textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
+var tweetButton = document.getElementById("submit");
 
 document.getElementById("textmessage").oninput = () => {
 var tweet = document.getElementById("textmessage").value;
@@ -71,18 +72,27 @@ var textReCount = document.getElementById("remainCount");
 textCount.innerHTML = tweetCount + " characters entered | ";
 textReCount.innerHTML = (280 - tweetCount) + " characters remaining";
 
-$('.highlighter').show();
- if (tweetCount >= 280) {
-    textReCount.style.color = "red";
-    // document.getElementById("short").style.display = "unset";
 
+$('.highlighter').show();
+ if (tweetCount > 280) {
+    textReCount.style.color = "red";
+    document.querySelector('#submit').disabled = true;
+    // document.getElementById("short").style.display = "unset";
+    document.getElementById("submit").innerHTML = '<i class="fas fa-exclamation-triangle"></i> '.concat("Error"); ;
+
+ }else if (tweetCount >= 280) {
+    textReCount.style.color = "red";
+    document.querySelector('#submit').disabled = false;
+    document.getElementById("submit").innerHTML = '<i class="fab fa-twitter"></i> '.concat("Tweet") ;
  }else if (tweetCount >= 260) {
     textReCount.style.color = "orange";
-    // document.getElementById("short").style.display = "none";
+    document.querySelector('#submit').disabled = false;
+    document.getElementById("submit").innerHTML = '<i class="fab fa-twitter"></i> '.concat("Tweet");
 
  }else{
     textReCount.style.color = "#2196f3";
-    // document.getElementById("short").style.display = "none";
+    document.querySelector('#submit').disabled = false;
+    document.getElementById("submit").innerHTML = '<i class="fab fa-twitter"></i> '.concat("Tweet");
 
  }
 
@@ -121,6 +131,7 @@ function changeNight(){
    textbox.style.background = "black";
    textbox.style.color = "white";
    textbox.style.boxShadow = "none";
+   textbox.style.transition = "all 1s ease 0s" ;
 
    var userBox = document.getElementById("username");
    userBox.style.color = "black";
@@ -146,15 +157,20 @@ function changeNight(){
 
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-sun" style="font-size:17px;color:white"></i>';
+    
+   var change = "black";
+   localStorage.setItem("mode" , change);
+    back.style.background = localStorage.getItem("mode");
    }else{
     
-   back.style.backgroundColor = "white";
+   back.style.background = "white";
    back.style.transition = "all 1s ease 0s" ;
 
    var textbox = document.getElementById("textmessage");
    textbox.style.background = "white";
    textbox.style.color = "black";
    textbox.style.boxShadow = "0 0.0625rem 0.375rem 0 #908b8b";
+   textbox.style.transition = "all 1s ease 0s" ;
 
    var userBox = document.getElementById("username");
    userBox.style.color = "white";
@@ -181,6 +197,10 @@ function changeNight(){
 
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-moon-o" style="font-size:17px;color:white"></i>';
+
+   var change = "white";
+   localStorage.setItem("mode" , change);
+    back.style.background = localStorage.getItem("mode");
    }
   
 
@@ -194,6 +214,72 @@ $(document).ready(function() {
 });
 
   document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem("mode") == "black") {
+       var back = document.getElementById("backg");
+       back.style.background = "black";
+       back.style.transition = "all 1s ease 0s" ;
+
+   var textbox = document.getElementById("textmessage");
+   textbox.style.background = "black";
+   textbox.style.color = "white";
+   textbox.style.boxShadow = "none";
+   textbox.style.transition = "all 1s ease 0s" ;
+
+   var userBox = document.getElementById("username");
+   userBox.style.color = "black";
+   userBox.style.background = "#e8ff08";
+
+   var speaker = document.getElementById('change');
+   speaker.style.background = "black";
+
+   var button = document.getElementById('submit');
+   button.style.borderColor = '#ffeb3b';
+   button.style.background = "black";
+
+   var copy = document.getElementById('copy');
+   copy.style.borderColor = '#ffeb3b';
+   copy.style.background = "black";
+   var del = document.getElementById('delete');
+   del.style.borderColor = '#ffeb3b';
+   del.style.background = "black";
+
+   var date = document.getElementById("showDate");
+   date.style.background = "black";
+   date.style.color = "white";
+    }else {
+       var back = document.getElementById("backg");
+       back.style.background = "white";
+       back.style.transition = "all 1s ease 0s" ;
+
+   var textbox = document.getElementById("textmessage");
+   textbox.style.background = "white";
+   textbox.style.color = "black";
+   textbox.style.boxShadow = "0 0.0625rem 0.375rem 0 #908b8b";
+   textbox.style.transition = "all 1s ease 0s" ;
+
+   var userBox = document.getElementById("username");
+   userBox.style.color = "white";
+   userBox.style.background = "#607d8b";
+
+   var speaker = document.getElementById('change');
+   speaker.style.background = "#03a9f4";
+ 
+   var button = document.getElementById('submit');
+   button.style.borderColor = ' #673ab7';
+   button.style.background = "#03a9f4";
+
+   var copy = document.getElementById('copy');
+   copy.style.borderColor = ' #673ab7';
+   copy.style.background = "#03a9f4";
+
+   var del = document.getElementById('delete');
+   del.style.borderColor = ' #673ab7';
+   del.style.background = "#03a9f4";
+
+   var date = document.getElementById("showDate");
+   date.style.background = "white";
+   date.style.color = "black";
+    }
   // document.getElementById("short").style.display = "none";
 var d = new Date();
 

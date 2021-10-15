@@ -9,6 +9,7 @@
     document.getElementById("textmessage").name = "text" ;
     }
 
+    
 
 //auto change Dark mode 
 const hours = new Date().getHours();
@@ -18,10 +19,12 @@ const hours = new Date().getHours();
    var back = document.getElementById("backg");
    back.style.background = "black";
    back.style.transition = "all 1s ease 0s" ;
+
    var textbox = document.getElementById("textmessage");
    textbox.style.background = "black";
    textbox.style.color = "white";
    textbox.style.boxShadow = "none";
+   textbox.style.transition = "all 1s ease 0s" ;
 
    var userBox = document.getElementById("username");
    userBox.style.color = "black";
@@ -57,6 +60,7 @@ const hours = new Date().getHours();
    textbox.style.background = "white";
    textbox.style.color = "black";
    textbox.style.boxShadow = "0 0.0625rem 0.375rem 0 #908b8b";
+   textbox.style.transition = "all 1s ease 0s" ;
 
    var userBox = document.getElementById("username");
    userBox.style.color = "white";
@@ -94,3 +98,32 @@ if (hours > 12) {
    showHour = hours;
    console.log("Loaded per hour: " + showHour + " AM");
 }
+
+if(hours == 18) { 
+      setInterval(function() {
+                  window.location.reload();
+                  console.log("Good Evening !! Night Mode Change !");
+      }, 1000); 
+}else if(hours == 6){
+       setInterval(function() {
+                  window.location.reload();
+                  console.log("Good Morning !! Light Mode Change !");
+      }, 1000); 
+}else {
+    console.log("Have A Good Day !!");
+}
+document.addEventListener('DOMContentLoaded', () => {
+
+var time = document.getElementById("time");
+if (hours >= 1 && hours <=5){
+  time.innerHTML = " Early Morning 🥱 from ";
+}else if(hours >= 6 && hours < 12){
+  time.innerHTML = " Good Morning 🌞 from ";
+}else if (hours >= 12 && hours <= 14){
+  time.innerHTML = " Good Afternoon ☀️ from " ;
+}else if (hours >= 15 && hours <= 18){
+  time.innerHTML = " Good Evening 🌤️ from ";
+}else if (hours >= 19 && hours <= 24){
+  time.innerHTML = " Good Night 🌜 from ";
+}
+});

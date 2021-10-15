@@ -48,19 +48,20 @@ speechRecognition.onresult = (event) => {
  // Set the onClick property of the start button
   function doStart() {
     // Start the Speech Recognition
-
-     var change = document.querySelector("#change");
+    var change = document.querySelector("#change");
+    // if(change.style.background == "blueviolet" || change.style.background == "black"){
      change.innerHTML = '<i class="fas fa-microphone"></i>';
     speechRecognition.start();
     change.style.background = "black";
     change.style.borderColor = "#89ff00";
-    
+    // }else{
     setTimeout(function(){
       change.innerHTML = '<i class="fas fa-microphone-slash"></i>';
       speechRecognition.stop();
       change.style.background = "black";
     change.style.borderColor = "#ffc107";
     }, 50000)
+  // }
   };
   // Set the onClick property of the stop button
   // function doStop() {
