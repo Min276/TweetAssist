@@ -9,8 +9,6 @@
     document.getElementById("textmessage").name = "text" ;
     }
 
-    
-
 //auto change Dark mode 
 const hours = new Date().getHours();
 // const isDayTime = hours > 6 && hours < 20;
@@ -49,6 +47,9 @@ const hours = new Date().getHours();
    date.style.background = "black";
    date.style.color = "white";
 
+  //  var addBtn = document.querySelector('#add-button');
+   addBtn.style.background = "black";
+
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-sun" style="font-size:17px;color:white"></i>';
    console.log("🌜 It's Night Time !");
@@ -85,6 +86,9 @@ const hours = new Date().getHours();
    var date = document.getElementById("showDate");
    date.style.background = "white";
    date.style.color = "black";
+
+  //  var addBtn = document.querySelector('#add-button');
+   addBtn.style.background = "white";
 
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-moon-o" style="font-size:17px;color:white"></i>';
@@ -124,7 +128,7 @@ if (hours >= 1 && hours <=5){
   time.innerHTML = " Good Afternoon ☀️ from " ;
 }else if (hours >= 15 && hours <= 18){
   time.innerHTML = " Good Evening 🌤️ from ";
-}else if (hours >= 19 && hours <= 24){
+}else if (hours >= 19 && hours <= 24 || hours == 0){
   time.innerHTML = " Good Night 🌜 from ";
 } else {
   time.innerHTML = " Warmly welcome to ";

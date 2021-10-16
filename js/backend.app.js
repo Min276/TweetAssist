@@ -14,7 +14,7 @@
     if(storedValue){
     document.getElementById('username').innerHTML = storedValue;
   }else{
-     document.getElementById('username').innerHTML = "Unknown User"
+     document.getElementById('username').innerHTML = "User"
   }
 
     input.addEventListener('click', function(){
@@ -35,7 +35,7 @@
   }
 	else {
 		// document.getElementById('username').innerHTML = "Unknown User";
-		userName = "Unknown User";
+		userName = "User";
     document.getElementById('username').innerHTML = userName;
 	}
 
@@ -155,6 +155,9 @@ function changeNight(){
    date.style.background = "black";
    date.style.color = "white";
 
+  //  var addBtn = document.querySelector('#add-button');
+   addBtn.style.background = "black";
+
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-sun" style="font-size:17px;color:white"></i>';
     
@@ -194,6 +197,9 @@ function changeNight(){
    var date = document.getElementById("showDate");
    date.style.background = "white";
    date.style.color = "black";
+
+  //  var addBtn = document.querySelector('#add-button');
+   addBtn.style.background = "white";
 
    var mode = document.getElementById("nightmode");
    mode.innerHTML = '<i class="fa fa-fw fa-moon-o" style="font-size:17px;color:white"></i>';
@@ -243,7 +249,11 @@ $(document).ready(function() {
    var date = document.getElementById("showDate");
    date.style.background = "black";
    date.style.color = "white";
-    }else if(localStorage.getItem("mode") == "white") {
+
+  //  var addBtn = document.querySelector('#add-button');
+   addBtn.style.background = "black";
+
+  } else if(localStorage.getItem("mode") == "white") {
        var back = document.getElementById("backg");
        back.style.background = "white";
        back.style.transition = "all 1s ease 0s" ;
@@ -276,7 +286,10 @@ $(document).ready(function() {
    var date = document.getElementById("showDate");
    date.style.background = "white";
    date.style.color = "black";
-    }
+
+  //  var addBtn = document.querySelector('#add-button');
+   addBtn.style.background = "white";
+  }
   // document.getElementById("short").style.display = "none";
 var d = new Date();
 
