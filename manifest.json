@@ -1,7 +1,7 @@
 {
     "name":"Tweet Assistance",
     "short_name":"Tweet Assist",
-    "description": "Tweet Assist will mainly help you convenient with your text tweets.",
+    "description": "This PWA Tweet Assist will mainly help you convenient with your text tweets.",
     "start_url": "index.html",
     "icons":[
        {
