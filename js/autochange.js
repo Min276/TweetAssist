@@ -104,16 +104,21 @@ if (hours > 12) {
    console.log("Loaded per hour: " + showHour + " AM");
 }
 
-if(hours == 18) { 
-      setInterval(function() {
+
+ var d = new Date();
+  var h = d.getHours();
+  var m = d.getMinutes();
+  var s = d.getSeconds();
+if(h == 18 && m == 00 && s == 00) { 
+      // setInterval(function() {
                   window.location.reload();
-                  console.log("Good Evening !!");
-      }, 1000); 
-}else if(hours == 6){
-       setInterval(function() {
+                  console.log("Good Evening 6 PM !!");
+      // }, 1000); 
+}else if(h == 6 && m == 00 && s == 00){
+      //  setInterval(function() {
                   window.location.reload();
-                  console.log("Good Morning !!");
-      }, 1000); 
+                  console.log("Good Morning 6 AM !!");
+      // }, 1000); 
 }else {
     console.log("Have A Good Day !!");
 }
