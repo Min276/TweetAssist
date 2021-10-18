@@ -12,7 +12,8 @@ const assets = [
   "/js/speechRecognition.js",
   "/js/backend.app.js",
   "/js/index.js",
-  "/js/connectivity.js"
+  "/js/connectivity.js",
+  "/favicon"
 ]
 
 self.addEventListener("install", installEvent => {
