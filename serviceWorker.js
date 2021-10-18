@@ -11,7 +11,11 @@ const assets = [
   "/js/jquery.hashtags.js",
   "js/speechRecognition.js",
   "js/backend.app.js",
-  "js/index.js"
+  "js/index.js",
+  "js/connectivity.js",
+  "favicon/tweet_assist.png",
+  "favicon/internet_error.png",
+  "favicon/internet_ok.png"
 ]
 
 self.addEventListener("install", installEvent => {
