@@ -2,6 +2,9 @@ const tweetAssist = "tweet-assist-v1"
 const assets = [
   "/",
   "/index.html",
+  "/favicon/tweet_assist.png",
+  "/favicon/internet_error.png",
+  "/favicon/internet_ok.png",
   "/css/style.css",
   "/css/jquery.hashtags.css",
   "https://kit.fontawesome.com/bbdccb4e58.js",
@@ -12,10 +15,7 @@ const assets = [
   "/js/speechRecognition.js",
   "/js/backend.app.js",
   "/js/index.js",
-  "/js/connectivity.js",
-  "/favicon/tweet_assist.png",
-  "/favicon/internet_error.png",
-  "/favicon/internet_ok.png"
+  "/js/connectivity.js"
 ]
 
 self.addEventListener("install", installEvent => {
