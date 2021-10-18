@@ -2,9 +2,6 @@ const tweetAssist = "tweet-assist-v1"
 const assets = [
   "/",
   "/index.html",
-  "/favicon/tweet_assist.png",
-  "/favicon/internet_error.png",
-  "/favicon/internet_ok.png",
   "/css/style.css",
   "/css/jquery.hashtags.css",
   "https://kit.fontawesome.com/bbdccb4e58.js",

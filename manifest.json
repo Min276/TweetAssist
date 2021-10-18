@@ -11,7 +11,14 @@
       {
         "src":"favicon/android-chrome-512x512.png",
         "sizes":"512x512","type":"image/png"
-    }],
+    },      
+      {
+        "src":  "favicon/tweet_assist.png"
+      }, {
+        "src":  "favicon/internet_error.png"
+      }, {
+        "src":  "favicon/internet_ok.png"
+      }],
     "theme_color":"#03a9f4",
     "background_color":"#ffffff",
     "display":"standalone"
