@@ -11,7 +11,7 @@ window.addEventListener("offline", (event) => {
   // statusDisplay.style.fontWeight = "bold";
 
   const image = document.createElement("img");
-  image.src = "../favicon/internet_error.png";
+  image.src = "/favicon/internet_error.png";
   image.style.width = "100%" ;
   statusDisplay.append(image);
 });
@@ -21,7 +21,7 @@ window.addEventListener("online", (event) => {
       statusDisplay.innerHTML = " ";
     
       const image = document.createElement("img");
-      image.src = "../favicon/internet_ok.png";
+      image.src = "/favicon/internet_ok.png";
       image.style.width = "100%" ;
       statusDisplay.append(image);
    setInterval(function() {
